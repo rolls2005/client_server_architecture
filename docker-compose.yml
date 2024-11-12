@@ -3,8 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    #ports:
-    #  - "3000:3000"
+    volumes:
+      - .:/srv/node/app # Mount local directory to container
+    ports:
+      - "9229:9229"
+      #  - "3000:3000"
     networks:
       - app-network
 
